@@ -19,7 +19,7 @@ export default class extends Controller {
       if (result.value) {
         let promise = $.ajax({
           type: 'DELETE',
-          url: 'x' + originLink + '.json'
+          url: originLink + '.json'
         })  
         
         promise.fail(cancelFunc)
@@ -27,10 +27,10 @@ export default class extends Controller {
 
         function confirmFunc(){
           $(`#${event.target.closest('tr').id}`).slideUp('slow')
-          Swal.fire("deleted")
+          Swal.fire("성공적으로 삭제되었습니다.")
         }
         function cancelFunc(){
-          Swal.fire("fail")
+          Swal.fire("삭제시 오류가 발생했습니다.")
         }
       }
     })
